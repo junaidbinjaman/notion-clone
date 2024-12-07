@@ -28,7 +28,7 @@ function Sidebar() {
                 <Sheet>
                     <SheetTrigger>
                         <MenuIcon
-                            className='p-2 md:p-5 hover:opacity-30 rounded-lg'
+                            className='p-2 md:p-5 hover:opacity-30 rounded-lg text-black'
                             size={40}
                         />
                     </SheetTrigger>
