@@ -1,11 +1,18 @@
 'use client';
+import React from "react";
 import Document from "@/components/Document";
 
 type DocumentPageProps = {
-    id: string
+    params: Promise<{
+        id: string
+    }>
 }
 
-function DocumentPage({id}: DocumentPageProps) {
+function DocumentPage({params}: DocumentPageProps) {
+    
+    const {id} = React.use(params)
+
+    console.log(id);
     
   return (
     <div className="flex flex-col flex-1 min-h-screen">

@@ -12,7 +12,7 @@ import {
 import {MenuIcon} from 'lucide-react';
 import {useUser} from '@clerk/nextjs';
 import {collectionGroup, query, where} from 'firebase/firestore';
-import {bd} from '../../firebase';
+import {db} from '../../firebase';
 import {DocumentData} from 'firebase-admin/firestore';
 import SidebarOption from './SidebarOption';
 
@@ -33,10 +33,11 @@ function Sidebar() {
         editor: [],
     });
 
+    // eslint-disable-next-line
     const [data, loading, error] = useCollection(
         user &&
             query(
-                collectionGroup(bd, 'rooms'),
+                collectionGroup(db, 'rooms'),
                 where('userId', '==', user.emailAddresses[0].toString())
             )
     );

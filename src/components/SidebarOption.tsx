@@ -2,7 +2,7 @@ import {doc} from 'firebase/firestore';
 import Link from 'next/link';
 import React from 'react';
 import {useDocumentData} from 'react-firebase-hooks/firestore';
-import {bd} from '../../firebase';
+import {db} from '../../firebase';
 import {usePathname} from 'next/navigation';
 
 type SidebarOptionProps = {
@@ -12,7 +12,7 @@ type SidebarOptionProps = {
 
 function SidebarOption({href, id}: SidebarOptionProps) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [data, loading, error] = useDocumentData(doc(bd, 'documents', id));
+    const [data, loading, error] = useDocumentData(doc(db, 'documents', id));
     const pathname = usePathname();
     const isActive = href.includes(pathname) && pathname !== '/';
 
