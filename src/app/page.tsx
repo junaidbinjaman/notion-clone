@@ -1,14 +1,10 @@
-import { Button } from "@/components/ui/button"
-import { SignedIn } from "@clerk/nextjs";
+import { ArrowLeftCircle } from "lucide-react";
 
 export default function Home() {
     return (
-        <div>
-            <h1>Lets build an AI productivity app</h1>
-            <Button>Click me</Button>
-            <SignedIn>
-              <h1 className="text-4xl">Hello, World</h1>
-            </SignedIn>
-        </div>
+        <main className="flex space-x-2 items-center animate-pulse cursor-pointer">
+            <ArrowLeftCircle className="w-12 h-12" />
+            <h1 className="font-bold">Get started with creating a New Document</h1>
+        </main>
     );
 }
